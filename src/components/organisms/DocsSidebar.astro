@@ -1,8 +1,8 @@
 ---
-import type { DocChapter } from '@utils/docs';
+import type { ResearchChapter } from '@utils/research';
 
 interface Props {
-  chapters: DocChapter[];
+  chapters: ResearchChapter[];
   currentPermalink: string;
 }
 
@@ -20,7 +20,7 @@ const { chapters, currentPermalink } = Astro.props;
 					{chapter.pages.map((page) => (
 						<li>
 							<a
-								href={`/docs/${page.data.permalink}`}
+								href={`/research/${page.data.permalink}`}
 								class:list={[
 									'block rounded-lg border-2 p-1 pl-2 text-sm text-gray-600 no-underline',
 									page.data.permalink === currentPermalink

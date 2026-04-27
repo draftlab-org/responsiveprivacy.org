@@ -1,11 +1,21 @@
 {
   "slug": "footer-2",
-  "title": "Project",
+  "title": "Research",
   "items": [
     {
       "type": "link",
-      "label": "Research",
-      "link": { "type": "internal", "pageRef": "/docs" }
+      "label": "Overview",
+      "link": { "type": "internal", "pageRef": "/research/synthesis" }
+    },
+    {
+      "type": "link",
+      "label": "Attribution Taxonomy",
+      "link": { "type": "internal", "pageRef": "/research/purpose" }
+    },
+    {
+      "type": "link",
+      "label": "Annexes",
+      "link": { "type": "internal", "pageRef": "/research/survey-a" }
     }
   ]
 }

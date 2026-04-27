@@ -202,7 +202,7 @@ const navigationCollection = defineCollection({
   }),
 });
 
-const docsCollection = defineCollection({
+const researchCollection = defineCollection({
   type: 'content',
   schema: z.object({
     permalink: z.string(),
@@ -217,7 +217,7 @@ const docsCollection = defineCollection({
 
 export const collections = {
   pages: pagesCollection,
-  docs: docsCollection,
+  research: researchCollection,
   site: siteCollection,
   navigation: navigationCollection,
 };

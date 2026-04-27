@@ -54,15 +54,15 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
     }),
   },
   {
-    name: 'Docs',
-    apiEndpoint: '/api/docs.json',
-    urlPrefix: '/docs/',
+    name: 'Research',
+    apiEndpoint: '/api/research.json',
+    urlPrefix: '/research/',
     icon: BookOpenIcon,
     modifier: '!',
-    transform: (doc: any) => ({
-      id: doc.id,
-      name: doc.data.title,
-      url: `/docs/${doc.data.permalink}`,
+    transform: (entry: any) => ({
+      id: entry.id,
+      name: entry.data.title,
+      url: `/research/${entry.data.permalink}`,
     }),
   },
 ];

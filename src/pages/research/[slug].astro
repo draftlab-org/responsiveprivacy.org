@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import DocsLayout from '@layouts/DocsLayout.astro';
+import { isVisible } from '@utils/content';
+import { getResearchChapters, getResearchNavigation } from '@utils/research';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('research');
+  return entries
+    .filter((entry) => isVisible(entry))
+    .map((entry) => ({
+      params: { slug: entry.data.permalink },
+      props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+
+const toc = headings
+  .filter((h) => h.depth >= 2 && h.depth <= 3)
+  .map((h) => ({ id: h.slug, value: h.text, depth: h.depth }));
+
+const chapters = await getResearchChapters();
+const { prev, next } = await getResearchNavigation(entry.data.permalink);
+---
+
+<DocsLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  chapters={chapters}
+  currentPermalink={entry.data.permalink}
+  toc={toc}
+  prev={prev}
+  next={next}
+>
+  <Content />
+</DocsLayout>

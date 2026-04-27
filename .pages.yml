@@ -399,10 +399,11 @@ content:
   # --------------------------------------------------------------------------
   # Docs
   # --------------------------------------------------------------------------
-  - name: docs
-    label: Docs
+  - name: research
+    label: Research
     type: collection
-    path: src/content/docs
+    path: src/content/research
+    subfolders: true
     filename: '{fields.permalink}.md'
     view:
       fields: [title, chapter, order, status]

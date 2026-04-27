@@ -1,0 +1,11 @@
+---
+import { getFirstResearchPage } from '@utils/research';
+
+const first = await getFirstResearchPage();
+
+if (first) {
+  return Astro.redirect(`/research/${first.data.permalink}`, 302);
+}
+
+return Astro.redirect('/', 302);
+---

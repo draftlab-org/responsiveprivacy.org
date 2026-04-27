@@ -15,7 +15,7 @@
     {
       "type": "link",
       "label": "Research",
-      "link": { "type": "internal", "pageRef": "/docs" }
+      "link": { "type": "internal", "pageRef": "/research/synthesis" }
     },
     {
       "type": "link",
