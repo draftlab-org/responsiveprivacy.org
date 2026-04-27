@@ -4,8 +4,8 @@ import {
   ListboxOption,
   ListboxOptions,
 } from '@headlessui/react';
-import IconChevronDown from '~icons/heroicons/chevron-down-20-solid';
 import IconCheck from '~icons/heroicons/check-20-solid';
+import IconChevronDown from '~icons/heroicons/chevron-down-20-solid';
 
 export interface FilterOption {
   value: string;

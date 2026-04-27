@@ -1,42 +1,95 @@
-title: Draftlab Scaffold
+title: Responsive privacy for safer digital presence
 status: published
-background: highlight
-description: A pretty good web development starter
+description: Visibility shouldn't cause your team harm. Safety shouldn't mean disappearing.
 sections:
-  - type: card
-    title: It probably has what you are looking for.
-    description: >-
-      A static site that is also a fully configurable website builder,
-      with predefined content categories and most common settings.
-    cards:
-      - title: Accessible by Default
-        content: >-
-          WCAG-compliant components, keyboard navigation, screen reader
-          support, and reduced motion preferences.
-      - title: CMS-ready
-        content: >-
-          Pre-configured settings to work with [PagesCMS](https://pagescms.com). Add articles, upload media, change site settings, the works.
-        button:
-          variant: primary
-          size: md
-          href: /how-to-use
-          text: Learn More
-      - title: Open Source
-        content: >-
-          Free to use, modify, and distribute. Built with Astro, Tailwind,
-          and modern web standards.
-      - title: Privacy by Design
-        content: >-
-          Built-in patterns for consent management, data minimization, and
-          transparent data practices.
-  - type: button
-    title: Ready to Start Building?
-    buttons:
-      - variant: primary
-        size: lg
-        href: /how-to-use
-        text: Learn more
-      - variant: outline
-        size: lg
-        href: https://github.com/draftlab-org/scaffold
-        text: View on GitHub
+  - type: feature
+    background:
+      bgColor: white
+    title: Responsive privacy for safer digital presence
+    titleSize: 1
+    body: Visibility shouldn't cause your team harm. Safety shouldn't mean disappearing.
+    bodySize: large
+    illustration: ../../assets/illustrations/illustration-1.svg
+    illustrationPosition: bottom
+
+  - type: feature
+    background:
+      bgColor: blue
+    title: What is Responsive Privacy
+    body: >-
+      Responsive Privacy is a framework and a set of tools that enable
+      organizations to evaluate and implement their current privacy needs,
+      allowing them to rapidly respond to acute threats to their team and
+      community, instead of choosing between getting seen and being protected.
+      Responsive Privacy provides a model that allows teams to swing between
+      the two modes as appropriate. Among many features, Responsive Privacy
+      includes:
+    items:
+      - title: Fast activation
+        description: Protection that works in minutes, not days
+      - title: Flexible visibility
+        description: Show what matters, without retracting everything
+      - title: Reversible changes
+        description: Restore visibility when risk subsides
+      - title: Guided decisions
+        description: Clear pathways for assessing risk and taking action
+      - title: Collaborative control
+        description: Shared decision-making between staff and organizations
+
+  - type: feature
+    background:
+      bgColor: white
+    title: Why Responsive Privacy
+    illustration: ../../assets/illustrations/illustration-2.svg
+    illustrationPosition: top
+    body: >-
+      Civil society and non-profit organizations are facing a growing tension
+      between visibility and privacy. To build trust, secure funding, and
+      demonstrate impact, they need to be visible. They need to show who they
+      are, who they work with, and the people behind their work. But that same
+      visibility can expose staff, especially those from vulnerable communities,
+      to harassment, doxxing, and escalating real-world threats.
+
+  - type: feature
+    background:
+      bgColor: yellow
+    title: How Responsive Privacy Works
+    illustration: ../../assets/illustrations/illustration-3.svg
+    illustrationPosition: right
+    body: |-
+      This project aims to introduce the concept of Responsive Privacy,
+      alongside some concrete implementations. Most information remains
+      visible by default, supporting the openness that organizations rely on.
+      But when there's an emergency, protection can be activated quickly,
+      without permanent loss, and in a way that reflects the needs of both
+      individual and organizational realities.
+
+      *We're rethinking how digital systems support the people behind public
+      work. To learn more, please visit the [GitHub page](https://github.com/).*
+
+  - type: feature
+    background:
+      bgColor: white
+    title: Our Research & Findings
+    illustration: ../../assets/illustrations/illustration-4.svg
+    illustrationPosition: top
+    body: >-
+      Superbloom and Draftlab conducted a recent methods research study
+      combining service and user research, and a literature review of the
+      challenges they face. This approach allowed us to capture both broad
+      patterns across the sector, and deep insights into individual experiences
+      on an individual and organizational level. Read our full report with our
+      methodology and key findings (INSERT LINK).
+
+  - type: feature
+    background:
+      bgColor: pink
+    title: Help Shape The Future of Responsive Privacy
+    body: |-
+      We're now looking to collaborate with organizations, practitioners, and
+      funders working in this space. If you're working on these issues, helping
+      to fund them, or shaping how they're implemented, and contributing to
+      what is becoming a movement.
+
+      Please reach out to us if you're interested in collaborating or funding
+      the future of Responsive Privacy. **(ADD EMAIL ADDRESS)**

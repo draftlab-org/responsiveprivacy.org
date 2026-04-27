@@ -10,12 +10,10 @@ import {
 import Fuse from 'fuse.js';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import BookOpenIcon from '~icons/heroicons/book-open';
-import DocumentIcon from '~icons/heroicons/document-text';
 import ExclamationTriangleIcon from '~icons/heroicons/exclamation-triangle';
 import FolderIcon from '~icons/heroicons/folder';
 import LifebuoyIcon from '~icons/heroicons/lifebuoy';
 import MagnifyingGlassIcon from '~icons/heroicons/magnifying-glass-20-solid';
-import UserIcon from '~icons/heroicons/user';
 
 type SearchResult = {
   id: string;
@@ -53,32 +51,6 @@ const SEARCH_CATEGORIES: CategoryConfig[] = [
       name: page.title,
       url: `/${page.id}`,
       imageUrl: page.heroImage?.src,
-    }),
-  },
-  {
-    name: 'People',
-    apiEndpoint: '/api/people.json',
-    urlPrefix: '/people/',
-    icon: UserIcon,
-    modifier: '>',
-    transform: (person: any) => ({
-      id: person.id,
-      name: person.name,
-      url: `/people/${person.id}`,
-      imageUrl: person.headshot?.src,
-    }),
-  },
-  {
-    name: 'Articles',
-    apiEndpoint: '/api/articles.json',
-    urlPrefix: '/articles/',
-    icon: DocumentIcon,
-    modifier: '@',
-    transform: (article: any) => ({
-      id: article.id,
-      name: article.data.title,
-      url: `/articles/${article.slug || article.id}`,
-      imageUrl: article.data.heroImage?.src,
     }),
   },
   {
@@ -146,9 +118,9 @@ export default function RichSearch() {
         categoryDataArrays.forEach((data, index) => {
           const category = SEARCH_CATEGORIES[index];
           const items = data
-            // Filter out unpublished entries for content collections (articles, docs)
+            // Filter out unpublished entries for content collections
             .filter((item: any) =>
-              category.name === 'Articles' || category.name === 'Docs'
+              category.name === 'Docs'
                 ? item.data?.status === 'published' ||
                   item.data?.status === 'archived'
                 : true

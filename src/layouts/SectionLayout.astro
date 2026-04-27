@@ -37,12 +37,13 @@ const maxWidths = {
 };
 
 const containerClass = containerized ? `mx-auto ${maxWidths[maxWidth]}` : '';
-const paddingClass = padding ? 'px-4 sm:px-6 lg:px-8 py-8' : '';
+const paddingClass = padding ? 'px-4 sm:px-6 lg:px-8 py-16 md:py-32' : '';
 
 const backgrounds = {
   white: 'bg-white',
-  gray: 'bg-gray-50',
-  gradient: 'bg-gradient-to-br from-blue-50 to-indigo-100',
+  yellow: 'bg-highlight-50',
+  pink: 'bg-secondary-50',
+  blue: 'bg-primary-50',
 };
 
 const bgClass = backgrounds[bgColor as keyof typeof backgrounds] || "";

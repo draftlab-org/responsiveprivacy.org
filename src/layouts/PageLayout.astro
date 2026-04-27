@@ -10,6 +10,7 @@ import { convertNavigationItems } from '@utils/navigation';
 
 // Fetch navigation data from content collections
 const mainNav = await getEntry('navigation', 'main');
+const siteConfig = await getEntry('site', 'config');
 
 // Convert navigation data to component format
 const defaultNavItems: NavItem[] = mainNav?.data.items
@@ -34,7 +35,7 @@ const {
   description,
   image,
   navItems = defaultNavItems,
-  siteName = 'Draftlab Scaffold',
+  siteName = siteConfig?.data.title ?? 'Responsive Privacy',
   stickyHeader = true,
   containerized = false,
   padding = false,

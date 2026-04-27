@@ -1,46 +1,26 @@
 {
   "slug": "footer-1",
-  "title": "Footer Nav 1",
+  "title": "Site",
   "items": [
     {
       "type": "link",
-      "label": "Menu Item",
-      "link": {
-        "type": "internal",
-        "pageRef": "/about"
-      }
+      "label": "About",
+      "link": { "type": "internal", "pageRef": "/about" }
     },
     {
       "type": "link",
-      "label": "Menu Item",
-      "link": {
-        "type": "internal",
-        "pageRef": "/about"
-      }
+      "label": "How it works",
+      "link": { "type": "internal", "pageRef": "/how-it-works" }
     },
     {
       "type": "link",
-      "label": "Menu Item",
-      "link": {
-        "type": "internal",
-        "pageRef": "/about"
-      }
+      "label": "Research",
+      "link": { "type": "internal", "pageRef": "/docs" }
     },
     {
       "type": "link",
-      "label": "Menu Item",
-      "link": {
-        "type": "internal",
-        "pageRef": "/about"
-      }
-    },
-    {
-      "type": "link",
-      "label": "Menu Item",
-      "link": {
-        "type": "internal",
-        "pageRef": "/about"
-      }
+      "label": "Contact",
+      "link": { "type": "internal", "pageRef": "/contact" }
     }
   ]
 }

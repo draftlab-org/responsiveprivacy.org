@@ -1,18 +1,7 @@
 @theme {
-  --font-sans: var(--font-rubik);
-  --font-serif: var(--font-ibm-plex-serif);
+  --font-sans: var(--font-open-sans);
+  --font-display: var(--font-montserrat);
   --font-mono: var(--font-jetbrains-mono);
-
-  /* TODO: #19 explore custom text sizes */
-  /* --text-sm: 0.625rem;
-  --text-base: 0.875rem;
-  --text-lg: 1rem;
-  --text-xl: 1.125rem;
-  --text-2xl: 1.4rem;
-  --text-3xl: 1.75rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 2.5rem;
-  --text-6xl: 3.5rem; */
 }
 
 /* defines default link styling as a single source of truth */
@@ -60,7 +49,7 @@
   h4,
   h5,
   h6 {
-    @apply scroll-mt-24 font-serif font-bold;
+    @apply scroll-mt-24 font-display font-bold;
   }
   h1 {
     @apply text-4xl md:text-6xl;

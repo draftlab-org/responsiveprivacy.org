@@ -59,36 +59,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     entries.push({ ogPath: page.id, image: page.data.heroImage });
   }
 
-  // Articles
-  const articles = await getCollection('articles');
-  for (const article of articles) {
-    if (!isVisible(article) || !article.data.heroImage) continue;
-    entries.push({
-      ogPath: `articles/${article.slug}`,
-      image: article.data.heroImage,
-    });
-  }
-
-  // People
-  const people = await getCollection('people');
-  for (const person of people) {
-    if (!isVisible(person) || !person.data.headshot) continue;
-    entries.push({
-      ogPath: `people/${person.data.id}`,
-      image: person.data.headshot,
-    });
-  }
-
-  // Partners (image is optional)
-  const partners = await getCollection('partners');
-  for (const partner of partners) {
-    if (!isVisible(partner) || !partner.data.image) continue;
-    entries.push({
-      ogPath: `partners/${partner.data.id}`,
-      image: partner.data.image,
-    });
-  }
-
   return entries.map((entry) => ({
     params: { path: entry.ogPath },
     props: { image: entry.image },

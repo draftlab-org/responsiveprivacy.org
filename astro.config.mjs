@@ -20,20 +20,20 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.bunny(),
-        name: 'Rubik',
-        weights: [300, 400, 500, 600, 700, 800],
-        cssVariable: '--font-rubik',
+        name: 'Open Sans',
+        weights: [400, 500, 600, 700],
+        cssVariable: '--font-open-sans',
       },
       {
         provider: fontProviders.bunny(),
-        name: 'IBM Plex Serif',
-        weights: [300, 400, 500, 600, 700],
-        cssVariable: '--font-ibm-plex-serif',
+        name: 'Montserrat',
+        weights: [500, 600, 700],
+        cssVariable: '--font-montserrat',
       },
       {
         provider: fontProviders.bunny(),
         name: 'JetBrains Mono',
-        weights: [300, 400],
+        weights: [400],
         cssVariable: '--font-jetbrains-mono',
       },
     ],

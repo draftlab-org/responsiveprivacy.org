@@ -10,10 +10,10 @@ import { siteConfig } from '@lib/config';
 import type { NavItem } from '@utils/navigation';
 import { isExternalLink, resolveFlexibleLink } from '@utils/navigation';
 import { useState } from 'react';
-import IconBars3 from '~icons/heroicons/bars-3';
-import IconXMark from '~icons/heroicons/x-mark';
-import IconChevronDown from '~icons/heroicons/chevron-down-20-solid';
 import IconExternalLink from '~icons/heroicons/arrow-top-right-on-square-20-solid';
+import IconBars3 from '~icons/heroicons/bars-3';
+import IconChevronDown from '~icons/heroicons/chevron-down-20-solid';
+import IconXMark from '~icons/heroicons/x-mark';
 
 interface MobileMenuProps {
   items: NavItem[];
@@ -74,7 +74,7 @@ export default function MobileMenu({
               <div className="flex h-16 shrink-0 items-center">
                 <a
                   href="/"
-                  className="font-serif text-2xl font-bold text-gray-900 underline decoration-primary-300 decoration-dotted decoration-4 underline-offset-8"
+                  className="font-display text-2xl font-bold text-gray-900"
                 >
                   {siteConfig.name}
                 </a>
@@ -115,7 +115,7 @@ export default function MobileMenu({
                                           }
                                           className={`group flex items-center gap-x-2 text-lg text-gray-700 ${
                                             isActive(href)
-                                              ? 'underline decoration-primary-300 decoration-dotted decoration-4 underline-offset-8'
+                                              ? 'underline decoration-primary-300 decoration-solid decoration-4 underline-offset-8'
                                               : 'no-underline'
                                           }`}
                                         >
@@ -143,7 +143,7 @@ export default function MobileMenu({
                               rel={external ? 'noopener noreferrer' : undefined}
                               className={`group flex items-center gap-x-4 text-xl text-black ${
                                 isActive(href)
-                                  ? 'underline decoration-primary-300 decoration-dotted decoration-4 underline-offset-8'
+                                  ? 'underline decoration-primary-300 decoration-solid decoration-4 underline-offset-8'
                                   : 'no-underline'
                               }`}
                             >

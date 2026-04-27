@@ -22,7 +22,7 @@ export default function NavItemDropdown({
     ? 'decoration-primary-300'
     : 'decoration-white transition transition-300 hover:decoration-gray-100';
 
-  const buttonClasses = `underline underline-offset-8 decoration-dotted decoration-4 inline-flex items-center px-3 py-2 text-xl text-black cursor-pointer ${activeStyles}`;
+  const buttonClasses = `underline underline-offset-8 decoration-solid decoration-4 inline-flex items-center px-3 py-2 text-xl text-black cursor-pointer ${activeStyles}`;
 
   const isChildActive = (href: string) => {
     if (!currentPath) return false;
@@ -48,7 +48,7 @@ export default function NavItemDropdown({
           const childActiveStyles = childActive
             ? 'decoration-primary-300'
             : 'decoration-white transition transition-300 hover:decoration-gray-100';
-          const itemClasses = `underline underline-offset-8 decoration-dotted decoration-4 inline-flex items-center px-3 py-2 text-black ${childActiveStyles}`;
+          const itemClasses = `underline underline-offset-8 decoration-solid decoration-4 inline-flex items-center px-3 py-2 text-black ${childActiveStyles}`;
 
           return (
             <MenuItem key={child.label}>
