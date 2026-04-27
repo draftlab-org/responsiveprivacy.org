@@ -170,10 +170,9 @@ export default function ContactForm() {
 			</div>
 
 			<altcha-widget
-				challengeurl="/api/altcha/challenge"
+				challenge="/api/altcha/challenge"
 				auto="onload"
-				hidefooter
-				hidelogo
+				suppressHydrationWarning
 			/>
 
 			<input
