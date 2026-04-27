@@ -1,4 +1,7 @@
 ---
+import ButtonGroup, {
+  type ButtonType,
+} from '@components/molecules/ButtonGroup.astro';
 import TOC from '@components/organisms/TOC';
 import renderMarkdownWithImages from '@utils/renderMarkdown';
 
@@ -6,33 +9,42 @@ export interface Props {
   content: string;
   withTOC?: boolean;
   id?: string;
+  buttons?: ButtonType[];
 }
 
-const { content, withTOC = false, id } = Astro.props;
+const { content, withTOC = false, id, buttons } = Astro.props;
 
-// Generate a unique ID for heading prefixes if not provided
 const sectionId = id || `richtext-${Math.random().toString(36)}`;
 
-const { html, toc } = await renderMarkdownWithImages(content, withTOC, withTOC ? sectionId : undefined);
+const { html, toc } = await renderMarkdownWithImages(
+  content,
+  withTOC,
+  withTOC ? sectionId : undefined
+);
 
 const hasTOC = withTOC && toc && toc.length > 0;
+const hasButtons = !!buttons && buttons.length > 0;
 ---
 
-{
-	hasTOC ? (
-		<div class="mx-auto max-w-6xl">
-			<div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_250px]">
-				<div class="prose max-w-3xl">
-					<Fragment set:html={html} />
-				</div>
-				<aside class="hidden lg:block">
-					<TOC client:load entries={toc!} />
-				</aside>
-			</div>
-		</div>
-	) : (
-		<div class="mx-auto prose max-w-3xl">
-			<Fragment set:html={html} />
-		</div>
-	)
-}
+<div class="flex flex-col gap-10">
+  {
+    hasTOC ? (
+      <div class="mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_250px]">
+          <div class="prose max-w-3xl">
+            <Fragment set:html={html} />
+          </div>
+          <aside class="hidden lg:block">
+            <TOC client:load entries={toc!} />
+          </aside>
+        </div>
+      </div>
+    ) : (
+      <div class="prose mx-auto max-w-3xl">
+        <Fragment set:html={html} />
+      </div>
+    )
+  }
+
+  {hasButtons && <ButtonGroup buttons={buttons!} />}
+</div>

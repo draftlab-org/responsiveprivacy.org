@@ -1,0 +1,30 @@
+---
+import IconCheck from '~icons/mdi/check-outline';
+
+export interface Item {
+  title: string;
+  description?: string;
+}
+
+export interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="flex flex-wrap justify-center gap-x-8 gap-y-6">
+  {
+    items.map((item) => (
+      <li class="flex basis-full gap-3 sm:basis-[calc(50%-1rem)] lg:basis-[calc((100%-4rem)/3)]">
+        <IconCheck className="mt-0.5 size-6 shrink-0 text-green-600" />
+        <div>
+          <p class="font-display font-semibold text-gray-900">{item.title}</p>
+          {item.description && (
+            <p class="mt-1 text-sm text-gray-700">{item.description}</p>
+          )}
+        </div>
+      </li>
+    ))
+  }
+</ul>

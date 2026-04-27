@@ -1,8 +1,71 @@
-title: About
+title: About Responsive Privacy
 permalink: about
 status: published
-description: About Responsive Privacy.
+description: A framework and set of tools that let civil society organizations protect their team's visibility without permanent loss.
 sections:
-  - type: feature
-    title: About
-    body: About Responsive Privacy.
+  - type: richText
+    background:
+      bgColor: white
+    content: |-
+      ## A growing tension between visibility and privacy
+
+      Civil society and non-profit organizations are facing a growing tension between visibility and privacy.
+
+      To build trust, secure funding, and demonstrate impact, they need to be visible. They need to show who they are, who they work with, and the people behind their work. But that same visibility can expose staff, especially those from vulnerable communities, to harassment, doxxing, and escalating real-world threats.
+
+      Today, when those risks emerge, organizations have few options. Protecting someone's personal information often means manually editing websites, removing content page by page, and waiting hours or days for changes to take effect. In many cases, the only available response is to delete information entirely. Once it's gone, it's gone.
+
+      But threats don't operate on those timelines. They spread quickly, escalate rapidly, and can move from online to offline harm in a matter of minutes. That's where Responsive Privacy comes into play.
+
+  - type: richText
+    background:
+      bgColor: blue
+    content: |-
+      ## Designing responsive transparency for safer digital presence
+
+      Responsive Privacy begins with a simple question: What would it look like to design systems that protect people without making them permanently disappear?
+
+      Responsive Privacy is a framework and a set of tools that enable organizations to evaluate and implement their custom privacy model, allowing them to rapidly respond to acute threats to their team and community. It is informed by the research conducted by Superbloom and Draftlab. Instead of choosing between being seen and being protected, Responsive Privacy provides a model that allows quick switching between the two.
+
+      Through our research with civil society organizations and their staff, a clear pattern emerged. Many individuals have experienced online threats, yet a significant number never report them. Organizations often only respond after an incident has already occurred, and even then, responses are slow, inconsistent, and difficult to coordinate. No organizations we spoke to had systems in place to temporarily hide sensitive information. We found that when action is taken, it is usually permanent.
+
+      At the same time, the people most affected are asking for something different. They do not want to disappear entirely. They want the ability to adjust their visibility in moments of risk, to hide certain details while keeping their work visible, and to restore that visibility once the threat has passed. They want to be part of those decisions, not removed from them.
+
+  - type: richText
+    background:
+      bgColor: white
+    content: |-
+      ## How Responsive Privacy works
+
+      This project aims to introduce the concept of responsive transparency, where information remains visible by default, supporting the openness that organizations rely on. But when risk emerges, protection can be activated quickly, without permanent loss, and in a way that reflects the needs of both individuals and organizations.
+
+      This means designing for speed, so that protection can happen within minutes rather than hours or days. It means designing for flexibility, so that specific pieces of information can be hidden without removing everything. It means designing for reversibility, so that visibility can return when it is safe to do so. And it means designing for collaboration, so that decisions about safety are shared rather than imposed.
+
+      Ultimately, Responsive Privacy is about rethinking how digital systems support the people behind public work. It challenges the idea that safety and transparency must be in opposition, and instead asks how we might design systems that hold both at once.
+    buttons:
+      - variant: outline
+        size: lg
+        icon: github
+        href: https://github.com/draftlab-org/responsive-privacy
+        text: Visit Responsive Privacy on GitHub
+
+  - type: richText
+    background:
+      bgColor: pink
+    content: |-
+      ## Help shape the future of Responsive Privacy
+
+      Responsive Privacy is a tool and framework co-developed by Superbloom and Draftlab.
+
+      We're now looking to collaborate with organizations, practitioners, and funders working at the intersection of digital safety, privacy, transparency, and public interest technology who want to help take Responsive Privacy further: testing it, shaping how it's implemented, and contributing to what it becomes over time.
+
+      This means working closely with partners to pilot and refine Responsive Privacy in real-world contexts, such as developing training and support models for civil society organizations, co-designing implementations, and continuing to improve the core module across different web environments.
+
+      In the longer term, we hope to evolve Responsive Privacy into a shared, community-backed standard that is stewarded collectively, with clear governance, and sustained through ongoing development and adoption.
+
+      Please reach out to us if you're interested in collaborating or funding the future of Responsive Privacy.
+    buttons:
+      - variant: primary
+        size: lg
+        href: /contact
+        text: Get in touch

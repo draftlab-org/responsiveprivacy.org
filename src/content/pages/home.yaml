@@ -7,8 +7,12 @@ sections:
       bgColor: white
     title: Responsive privacy for safer digital presence
     titleSize: 1
-    body: Visibility shouldn't cause your team harm. Safety shouldn't mean disappearing.
+    bottomLine: |-
+      Visibility shouldn't cause your team harm.
+
+      Safety shouldn't mean disappearing.
     bodySize: large
+    layout: stacked
     illustration: ../../assets/illustrations/illustration-1.svg
     illustrationPosition: bottom
 
@@ -16,14 +20,14 @@ sections:
     background:
       bgColor: blue
     title: What is Responsive Privacy
+    layout: split
     body: >-
-      Responsive Privacy is a framework and a set of tools that enable
+      Responsive Privacy is a [framework](/research/decision-framework) and a [set of tools](/how-it-works) that enable
       organizations to evaluate and implement their current privacy needs,
       allowing them to rapidly respond to acute threats to their team and
       community, instead of choosing between getting seen and being protected.
       Responsive Privacy provides a model that allows teams to swing between
-      the two modes as appropriate. Among many features, Responsive Privacy
-      includes:
+      the two modes as appropriate.
     items:
       - title: Fast activation
         description: Protection that works in minutes, not days
@@ -40,6 +44,7 @@ sections:
     background:
       bgColor: white
     title: Why Responsive Privacy
+    layout: stacked
     illustration: ../../assets/illustrations/illustration-2.svg
     illustrationPosition: top
     body: >-
@@ -54,23 +59,35 @@ sections:
     background:
       bgColor: yellow
     title: How Responsive Privacy Works
+    layout: split
     illustration: ../../assets/illustrations/illustration-3.svg
-    illustrationPosition: right
-    body: |-
+    illustrationPosition: top
+    body: >-
       This project aims to introduce the concept of Responsive Privacy,
       alongside some concrete implementations. Most information remains
       visible by default, supporting the openness that organizations rely on.
       But when there's an emergency, protection can be activated quickly,
       without permanent loss, and in a way that reflects the needs of both
       individual and organizational realities.
-
-      *We're rethinking how digital systems support the people behind public
-      work. To learn more, please visit the [GitHub page](https://github.com/).*
+    bottomLine: >-
+      We're rethinking how digital systems support the people behind public
+      work.
+    buttons:
+      - variant: outline
+        size: lg
+        href: /research/synthesis
+        text: How it works
+      - variant: outline
+        size: lg
+        icon: github
+        href: https://github.com/draftlab-org/responsive-privacy
+        text: View on GitHub
 
   - type: feature
     background:
       bgColor: white
     title: Our Research & Findings
+    layout: stacked
     illustration: ../../assets/illustrations/illustration-4.svg
     illustrationPosition: top
     body: >-
@@ -78,18 +95,25 @@ sections:
       combining service and user research, and a literature review of the
       challenges they face. This approach allowed us to capture both broad
       patterns across the sector, and deep insights into individual experiences
-      on an individual and organizational level. Read our full report with our
-      methodology and key findings (INSERT LINK).
+      on an individual and organizational level.
+    buttons:
+      - variant: primary
+        size: lg
+        href: /research/synthesis
+        text: Read our full report
 
   - type: feature
     background:
       bgColor: pink
     title: Help Shape The Future of Responsive Privacy
+    layout: stacked
     body: |-
       We're now looking to collaborate with organizations, practitioners, and
-      funders working in this space. If you're working on these issues, helping
-      to fund them, or shaping how they're implemented, and contributing to
-      what is becoming a movement.
+      funders working in this space. Let us know if you're working on these issues, helping
+      to fund them, or shaping how they're implemented.
 
-      Please reach out to us if you're interested in collaborating or funding
-      the future of Responsive Privacy. **(ADD EMAIL ADDRESS)**
+    buttons:
+      - variant: outline
+        size: lg
+        href: /contact
+        text: Get in touch

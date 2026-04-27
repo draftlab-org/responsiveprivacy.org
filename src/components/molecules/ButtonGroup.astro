@@ -1,0 +1,48 @@
+---
+import Button from '@components/atoms/Button.astro';
+import IconGithub from '~icons/simple-icons/github';
+import IconNpm from '~icons/simple-icons/npm';
+
+export type ButtonIcon = 'github' | 'npm';
+
+export interface ButtonType {
+  variant: string;
+  size: string;
+  href: string;
+  text: string;
+  icon?: ButtonIcon;
+}
+
+export interface Props {
+  buttons: ButtonType[];
+  class?: string;
+}
+
+const { buttons, class: className = '' } = Astro.props;
+
+const iconMap = {
+  github: IconGithub,
+  npm: IconNpm,
+} as const;
+---
+
+<div class:list={['flex flex-wrap justify-center gap-4', className]}>
+  {
+    buttons.map((button) => {
+      const Icon = button.icon ? iconMap[button.icon] : null;
+      return (
+        <Button
+          type="button"
+          as="a"
+          variant={button.variant as any}
+          size={button.size as any}
+          href={button.href}
+          class="inline-flex items-center gap-2"
+        >
+          {Icon && <Icon className="size-5 shrink-0" aria-hidden="true" />}
+          <span>{button.text}</span>
+        </Button>
+      );
+    })
+  }
+</div>

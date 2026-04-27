@@ -71,17 +71,21 @@ const pagesCollection = defineCollection({
           .default(2),
         body: z.string().optional(),
         bodySize: z.enum(['normal', 'large']).optional().default('normal'),
+        layout: z.enum(['stacked', 'split']).optional().default('stacked'),
         illustration: image().optional(),
         illustrationPosition: z
-          .enum(['top', 'bottom', 'left', 'right'])
+          .enum(['top', 'bottom'])
           .optional()
           .default('top'),
         items: z.array(featureItemSchema).optional(),
+        bottomLine: z.string().optional(),
+        buttons: z.array(buttonSchema).optional(),
       }),
       SectionCommonSchema.extend({
         type: z.literal('richText'),
         content: z.string(),
         withTOC: z.boolean().optional().default(false),
+        buttons: z.array(buttonSchema).optional(),
       }),
       SectionCommonSchema.extend({
         type: z.literal('button'),
@@ -94,6 +98,9 @@ const pagesCollection = defineCollection({
         description: z.string().optional(),
         cards: z.array(cardSchema).optional(),
         buttons: z.array(buttonSchema).optional(),
+      }),
+      SectionCommonSchema.extend({
+        type: z.literal('contactForm'),
       }),
     ]);
 

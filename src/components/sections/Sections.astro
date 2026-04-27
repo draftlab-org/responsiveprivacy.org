@@ -1,6 +1,7 @@
 ---
 import ButtonSection from '@components/sections/ButtonSection.astro';
 import CardSection from '@components/sections/CardSection.astro';
+import ContactFormSection from '@components/sections/ContactFormSection.astro';
 import FeatureSection from '@components/sections/FeatureSection.astro';
 import FlexiSection from '@components/sections/FlexiSection.astro';
 import RichTextSection from '@components/sections/RichTextSection.astro';
@@ -37,9 +38,12 @@ const { sectionItems } = Astro.props;
               titleSize={section.titleSize}
               body={section.body}
               bodySize={section.bodySize}
+              layout={section.layout}
               illustration={section.illustration}
               illustrationPosition={section.illustrationPosition}
               items={section.items}
+              bottomLine={section.bottomLine}
+              buttons={section.buttons}
             />
           );
         case 'richText':
@@ -47,6 +51,7 @@ const { sectionItems } = Astro.props;
             <RichTextSection
               content={section.content}
               withTOC={section.withTOC}
+              buttons={section.buttons}
             />
           );
         case 'card':
@@ -58,6 +63,8 @@ const { sectionItems } = Astro.props;
               buttons={section.buttons}
             />
           );
+        case 'contactForm':
+          return <ContactFormSection />;
         default:
           return null;
       }
