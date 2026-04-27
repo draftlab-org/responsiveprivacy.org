@@ -52,6 +52,15 @@ components:
         label: Link URL
         type: string
         required: true
+      - name: icon
+        label: Icon
+        type: select
+        options:
+          values:
+            - { label: 'None', value: '' }
+            - { label: GitHub, value: github }
+            - { label: npm, value: npm }
+        default: ''
 
   card:
     type: object

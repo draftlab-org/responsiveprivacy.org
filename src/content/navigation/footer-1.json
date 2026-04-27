@@ -14,11 +14,6 @@
     },
     {
       "type": "link",
-      "label": "Research",
-      "link": { "type": "internal", "pageRef": "/docs" }
-    },
-    {
-      "type": "link",
       "label": "Contact",
       "link": { "type": "internal", "pageRef": "/contact" }
     }

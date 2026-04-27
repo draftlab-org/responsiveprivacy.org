@@ -27,10 +27,6 @@ const footerNav2 = await getEntry('navigation', 'footer-2');
 // Prepare description with fallback logic
 const description = siteConfig.footer?.description || siteConfig.description;
 
-// Prepare copyright
-const currentYear = new Date().getFullYear();
-const copyrightText = `© ${currentYear} ${siteConfig.title}.`;
-
 // Render footer bottom content
 const { html: footerBottomHtml } = await renderMarkdown(siteConfig.footer.bottom);
 ---
@@ -126,7 +122,6 @@ const { html: footerBottomHtml } = await renderMarkdown(siteConfig.footer.bottom
 		<!-- Bottom Section: Copyright and footer content -->
 		<div class="border-t border-white/10 pt-8">
 			<div class="space-y-2 text-center *:text-sm">
-				<p class="">{copyrightText}</p>
 				<div class="*:text-sm [&_a]:text-white" set:html={footerBottomHtml} />
 			</div>
 		</div>

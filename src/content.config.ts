@@ -1,4 +1,6 @@
-import { defineCollection, type ImageFunction, z } from 'astro:content';
+import { defineCollection, type ImageFunction } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const statusSchema = z
   .enum(['draft', 'published', 'archived'])
@@ -19,6 +21,7 @@ const createSchemas = (image: ImageFunction) => {
     size: z.string(),
     href: z.string(),
     text: z.string(),
+    icon: z.enum(['github', 'npm']).optional(),
   });
 
   const cardSchema = z.object({
@@ -33,7 +36,7 @@ const createSchemas = (image: ImageFunction) => {
 };
 
 const pagesCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.yaml', base: './src/content/pages' }),
   schema: ({ image }) => {
     const { buttonSchema, cardSchema } = createSchemas(image);
 
@@ -116,12 +119,12 @@ const pagesCollection = defineCollection({
 });
 
 const siteCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/site' }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
       description: z.string(),
-      url: z.string().url(),
+      url: z.url(),
       favicon: z.string().default('/favicon.svg'),
       defaultOgImage: image().optional(),
       defaultLogoLight: image().optional(),
@@ -165,7 +168,7 @@ const flexibleLinkSchema = z.discriminatedUnion('type', [
   }),
   z.object({
     type: z.literal('external'),
-    url: z.string().url(),
+    url: z.url(),
   }),
 ]);
 
@@ -194,7 +197,7 @@ const navigationItemSchema = z.discriminatedUnion('type', [
 ]);
 
 const navigationCollection = defineCollection({
-  type: 'data',
+  loader: glob({ pattern: '**/[^_]*.json', base: './src/content/navigation' }),
   schema: z.object({
     slug: z.string(),
     title: z.string(),
@@ -203,7 +206,7 @@ const navigationCollection = defineCollection({
 });
 
 const researchCollection = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/[^_]*.md', base: './src/content/research' }),
   schema: z.object({
     permalink: z.string(),
     title: z.string(),
