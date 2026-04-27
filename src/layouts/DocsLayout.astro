@@ -3,8 +3,8 @@ import DocsPrevNext from '@components/organisms/DocsPrevNext.astro';
 import DocsSidebar from '@components/organisms/DocsSidebar.astro';
 import TOC from '@components/organisms/TOC';
 import PageLayout from '@layouts/PageLayout.astro';
-import type { ResearchChapter, ResearchEntry } from '@utils/research';
 import type { TocEntry } from '@utils/renderMarkdown';
+import type { ResearchChapter, ResearchEntry } from '@utils/research';
 
 interface Props {
   title: string;
@@ -42,7 +42,11 @@ const { title, description, chapters, currentPermalink, toc, prev, next } =
 			<main>
 				<article class="mx-auto prose max-w-3xl">
 					<h1>{title}</h1>
-					{description && <p class="lead -mt-4 mb-8 text-xl text-gray-600">{description}</p>}
+					{
+						description && (
+							<p class="lead -mt-4 mb-8 text-xl text-gray-600">{description}</p>
+						)
+					}
 					<slot />
 				</article>
 				<div class="mx-auto max-w-3xl">

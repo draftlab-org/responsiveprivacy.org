@@ -3,6 +3,7 @@ import { Font } from 'astro:assets';
 import { getEntry } from 'astro:content';
 import { ClientRouter } from "astro:transitions";
 
+
 // Fetch site config from content collection
 const siteConfigEntry = await getEntry('site', 'config');
 
@@ -11,6 +12,8 @@ if (!siteConfigEntry) {
 }
 
 const siteConfig = siteConfigEntry.data;
+
+const siteDomain = new URL( siteConfig.url)
 
 
 export interface Props {
@@ -70,6 +73,12 @@ if (image) {
 <Font cssVariable="--font-montserrat" preload />
 <Font cssVariable="--font-open-sans" preload />
 <Font cssVariable="--font-jetbrains-mono" preload />
+
+<!-- Privacy-friendly analytics by Plausible -->
+<script
+	defer
+	data-domain={siteDomain.hostname}
+	src="https://plausible.io/js/script.js"></script>
 
 <ClientRouter />
 
