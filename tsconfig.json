@@ -14,6 +14,6 @@
       "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"]
     },
-    "types": ["unplugin-icons/types/astro"]
+    "types": ["unplugin-icons/types/react"]
   }
 }
