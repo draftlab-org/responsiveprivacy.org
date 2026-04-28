@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { getEntry } from 'astro:content';
+import draftlabLogo from '@assets/partners/draftlab-logo.svg';
+import otfLogo from '@assets/partners/open-technology-fund.png';
+import superbloomLogo from '@assets/partners/sprblm-horizontal.svg';
 import Link from '@components/atoms/Link.astro';
 import SocialLinks from '@components/molecules/SocialLinks.astro';
 import { isExternalLink, resolveFlexibleLink } from '@utils/navigation';
@@ -29,10 +32,48 @@ const description = siteConfig.footer?.description || siteConfig.description;
 
 // Render footer bottom content
 const { html: footerBottomHtml } = await renderMarkdown(siteConfig.footer.bottom);
+
+const partners = [
+  { name: 'Draftlab', href: 'https://draftlab.org', logo: draftlabLogo },
+  { name: 'Superbloom', href: 'https://superbloom.design', logo: superbloomLogo },
+  { name: 'Open Technology Fund', href: 'https://opentech.fund', logo: otfLogo },
+];
 ---
 
 <footer class={`bg-gray-950 text-white ${className}`}>
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+		<!-- Partners / acknowledgements -->
+		<div class="mb-12 border-b border-white/10 pb-12">
+			<div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-2">
+				<p class="max-w-xl text-sm text-white/70">
+					Responsive Privacy is a project by Draftlab and Superbloom, with
+					support from Open Technology Fund and our communities of activists and
+					practitioners of organisational and digital security.
+				</p>
+				<ul class="flex flex-wrap items-center justify-start gap-x-10 gap-y-6 lg:justify-end">
+					{
+						partners.map((partner) => (
+							<li>
+								<a
+									href={partner.href}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={partner.name}
+									class="block opacity-80 transition-opacity hover:opacity-100"
+								>
+									<Image
+										src={partner.logo}
+										alt={partner.name}
+										class="h-8 w-auto [filter:brightness(0)_invert(1)]"
+									/>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+
 		<!-- Main footer content: 3 columns on desktop, stack on mobile -->
 		<div class="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
 			<!-- Left side: Content Section (50% on desktop) -->
@@ -121,9 +162,10 @@ const { html: footerBottomHtml } = await renderMarkdown(siteConfig.footer.bottom
 
 		<!-- Bottom Section: Copyright and footer content -->
 		<div class="border-t border-white/10 pt-8">
-			<div class="space-y-2 text-center *:text-sm">
-				<div class="*:text-sm [&_a]:text-white" set:html={footerBottomHtml} />
-			</div>
+			<div
+				class="text-center text-sm text-white/70 *:text-sm [&_a]:text-white/70 [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-white"
+				set:html={footerBottomHtml}
+			/>
 		</div>
 	</div>
 </footer>
