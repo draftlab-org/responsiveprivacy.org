@@ -3,6 +3,8 @@
   "description": "Visibility shouldn't cause your team harm. Safety shouldn't mean disappearing.",
   "url": "https://responsiveprivacy.org",
   "favicon": "/favicon.svg",
+  "defaultLogoLight": "../../assets/responsive-privacy-mark.svg",
+  "defaultLogoDark": "../../assets/responsive-privacy-mark-on-dark.svg",
   "footer": {
     "description": "A framework and a set of tools that enable organizations to evaluate and implement their current privacy needs.",
     "bottom": "Some rights reserved. Unless specified differently, all original creative content on this website is [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). Code is licensed under [AGPL](https://www.gnu.org/licenses/agpl-3.0.en.html#license-text). We don't use cookies or invasive ad-tech. Privacy-preserving analytics provided by [Plausible](https://plausible.io/data-policy). Powered by [Scaffold](https://scaffold.draftlab.org/)."

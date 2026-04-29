@@ -46,14 +46,10 @@ const isActive = (item: NavItemType) => {
 		<Link
 			href="/"
 			variant="unstyled"
-			class="font-display text-2xl font-bold text-gray-900"
-			>{
-				logo ? (
-					<Image src={logo} alt={siteName} class="w-45" />
-				) : (
-					<span>{siteName}</span>
-				)
-			}
+			class="flex items-center gap-3 font-display text-2xl font-bold text-gray-900"
+		>
+			{logo && <Image src={logo} alt="" class="h-8 w-auto" />}
+			<span>{siteName}</span>
 		</Link>
 	</div>
 

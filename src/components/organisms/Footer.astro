@@ -80,23 +80,20 @@ const partners = [
 			<div class="space-y-6">
 				<!-- Logo -->
 				<div>
-					{
-						siteConfig.defaultLogoDark ? (
+					<Link
+						href="/"
+						variant="unstyled"
+						class="flex items-center gap-3 font-display text-2xl font-bold text-white"
+					>
+						{siteConfig.defaultLogoDark && (
 							<Image
 								src={siteConfig.defaultLogoDark}
-								alt={siteConfig.title}
-								class="h-12 w-auto"
+								alt=""
+								class="h-8 w-auto"
 							/>
-						) : (
-							<Link
-								href="/"
-								variant="unstyled"
-								class="font-display text-2xl font-bold text-white"
-							>
-								{siteConfig.title}
-							</Link>
-						)
-					}
+						)}
+						<span>{siteConfig.title}</span>
+					</Link>
 				</div>
 
 				<!-- Description -->
