@@ -14,10 +14,7 @@ sections:
     illustration: ../../assets/illustrations/illustration-3.svg
     illustrationPosition: top
     body: >-
-      Toggle staff visibility across five privacy levels without destroying
-      content. Based on the
-      [Superbloom/Draftlab Responsive Transparency research](/research/synthesis),
-      an evidence-based taxonomy for managing organizational PII exposure.
+      Responsive Privacy helps you manage personal data on static sites without deleting or rewriting content. You can adjust staff visibility across five privacy levels—from public to hidden—using a framework grounded in Superbloom and Draftlab's [Responsive Transparency research](/research/synthesis).
 
   - type: feature
     background:
