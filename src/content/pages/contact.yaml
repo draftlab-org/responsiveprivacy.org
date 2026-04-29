@@ -3,19 +3,25 @@ permalink: contact
 status: published
 description: Get in touch with the Responsive Privacy team.
 sections:
-  - type: richText
+  - type: feature
     background:
       bgColor: blue
-    content: |-
-      ## Help shape the future of Responsive Privacy
+    title: Help shape the future of Responsive Privacy
+    layout: split
+    illustrationPosition: top
+    body: |-
+      We're building Responsive Privacy as a collaborative effort.
 
-      We're looking to collaborate with organizations, practitioners, and funders working at the intersection of digital safety, privacy, transparency, and public interest technology who want to help take Responsive Privacy further: testing it, shaping how it's implemented, and contributing to what it becomes over time.
+      We're particularly interested in working with organizations and funders who want to:
 
-      This means working closely with partners to pilot and refine Responsive Privacy in real-world contexts, such as developing training and support models for civil society organizations, co-designing implementations, and continuing to improve the core module across different web environments.
+      - pilot the approach in real-world contexts
+      - co-design implementations and training models
+      - improve the core module across different web environments
 
-      In the longer term, we hope to evolve Responsive Privacy into a shared, community-backed standard that is stewarded collectively, with clear governance, and sustained through ongoing development and adoption.
+    bottomLine: |-
+      Over time, we aim to evolve Responsive Privacy into a community-governed, widely adopted standard for managing personal data exposure online.
 
-      Please reach out to us if you're interested in collaborating or funding the future of Responsive Privacy.
+      Contact us to explore collaboration or funding opportunities.
 
   - type: contactForm
     background:
