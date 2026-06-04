@@ -15,6 +15,9 @@ const siteConfig = siteConfigEntry.data;
 
 const siteDomain = new URL( siteConfig.url)
 
+const isProd = import.meta.env.PROD;
+
+
 
 export interface Props {
   title: string;
@@ -69,16 +72,51 @@ if (image) {
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageURL} />
 
+{
+	isProd && (
+		<>
+			{/* Privacy-preserving analytics by self-hosted Umami */}
+			<script
+				is:inline
+				defer
+				src="https://umami.draftlab.dev/script.js"
+				data-performance="true"
+				data-do-not-track="true"
+				data-website-id="bc5f1852-8bd0-491b-854d-4383ed2dcd00"
+				transition:persist
+			/>
+			{/* Auto-tag outbound links for Umami. Sweep on DOM ready + each
+			    view transition. */}
+			<script>
+				(function () {
+					if (document.documentElement.dataset.outboundLinkTracker) return;
+					document.documentElement.dataset.outboundLinkTracker = 'true';
+					function tagLink(a:any) {
+						if (!a.host || a.host === window.location.host) return;
+						if (a.dataset.umamiEvent) return;
+						a.dataset.umamiEvent = 'outbound-link-click';
+						a.dataset.umamiEventUrl = a.href;
+					}
+					function tagAll() {
+						document.querySelectorAll('a[href]').forEach(tagLink);
+					}
+					if (document.readyState === 'loading') {
+						document.addEventListener('DOMContentLoaded', tagAll);
+					} else {
+						tagAll();
+					}
+					document.addEventListener('astro:page-load', tagAll);
+				})();
+			</script>
+		</>
+	)
+}
+
 <!-- Local Font Declaration -->
 <Font cssVariable="--font-montserrat" preload />
 <Font cssVariable="--font-open-sans" preload />
 <Font cssVariable="--font-jetbrains-mono" preload />
 
-<!-- Privacy-friendly analytics by Plausible -->
-<script
-	defer
-	data-domain={siteDomain.hostname}
-	src="https://plausible.io/js/script.js"></script>
 
 <ClientRouter />
 
